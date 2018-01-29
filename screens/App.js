@@ -83,7 +83,7 @@ export default class App extends React.Component {
   {
     return (
       <View style={{flex:1,}}>
-        <Image source={require('./../resources/images/splash.jpg')} style={{flex:1,width:window.width,height:window.height}}/>
+        <Image resizeMode="cover" source={require('./../resources/images/pexels-photo-64769.jpeg')} style={{flex:1,width:window.width,height:window.height}}/>
 
         <View style={styles.overlay}>
         

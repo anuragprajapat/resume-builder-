@@ -7,6 +7,7 @@ import {
   Dimensions,
   TouchableOpacity,
   Text,
+  ScrollView,
   View
 } from 'react-native';
 import  styles from './../resources/styles';
@@ -18,16 +19,16 @@ const screenWidth= Dimensions.get('window').width;
 var activateOtp1=true,activateOtp2=false,activateOtp3=false,activateOtp4=false;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CustomHeader from './../customModules/header';
-import Gems from './../customModules/cardview';
+import FlatGems from './../customModules/flatGems';
 
 import RNAccountKit from 'react-native-facebook-account-kit'
 
-export default class HomeScreen extends React.Component {
+export default class BasicProfileScreen extends React.Component {
 
     static navigationOptions = ({ navigation }) => ({
   
         title: 'Home',
-        header:<CustomHeader title="My Resumes" back={()=>navigation.goBack()}/>,
+        header:<CustomHeader title="Basic Profile" back={()=>navigation.goBack()}/>,
         });
     
 
@@ -53,28 +54,21 @@ export default class HomeScreen extends React.Component {
     render() 
     {
         return (
-        <View style={{flex:1,backgroundColor:global.WHITE_SOMKE,padding:scale(12)}}>
+        <ScrollView style={{flex:1,backgroundColor:global.WHITE_SOMKE,padding:scale(12)}}>
 
 
         {/* <TouchableOpacity onPress={()=>this.logout()}>
             <Text>Logout</Text>
         </TouchableOpacity> */}
-        <View style={{flexDirection:'row',justifyContent:'space-around',}}>
-            <Gems gemColor="#01c2e1" tileName="SAP CV" singleLetterColor="#00aec9"/>
-            <Gems gemColor="#788cbf" tileName="CV for British Telecom" singleLetterColor="#64729e"/>
-        </View>
-
-        <View style={{flexDirection:'row',justifyContent:'space-around',paddingTop:verticalScale(12)}}>
-            <Gems gemColor="#fe3c57" tileName="Full Stack for Capillary" singleLetterColor="#e4364f"/>
-            <Gems gemColor="#cfa16d" tileName="Full Stack for QikPod" singleLetterColor="#bb9362"/>
-        </View>
-
-        <View style={{flexDirection:'row',justifyContent:'space-around',paddingTop:verticalScale(12)}}>
-            <Gems gemColor="#9678cf" tileName="Machine Learning" singleLetterColor="#8167b1"/>
-            <Gems onPress={()=>this.props.navigation.navigate('Fill')} gemColor="#efbe31" tileName="Create New" singleLetterColor="#d6a000"/>
-        </View>
+        <View style={{justifyContent:'space-around',marginBottom:verticalScale(20)}}>
+            <View style={{backgroundColor:'#fff',elevation:4,}}>
+                <Text>Hi</Text>
+            </View>
 
         </View>
+
+       
+        </ScrollView>
         );
     }
 }

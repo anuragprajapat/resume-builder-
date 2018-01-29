@@ -22,6 +22,8 @@ import App from './App';
 import SignupScreen from './Signup';
 import OtpVerifyScreen from './OtpVerify';
 import HomeScreen from './Home';
+import FillScreen from './fillUp';
+import BasicProfileScreen from './basicProfile';
 
 // screens
 
@@ -40,7 +42,7 @@ export default class SplashScreen extends React.Component {
                       NavigationActions.navigate({ routeName: 'App'})
                     ]
                   })
-                  this.props.navigation.dispatch(resetAction)
+                   this.props.navigation.dispatch(resetAction)
             }
             else{
                 console.log("Access Token Found...",token);
@@ -81,7 +83,7 @@ export default class SplashScreen extends React.Component {
   {
     return (
         <View style={{flex:1,}}>
-        <Image source={require('./../resources/images/splash.jpg')} style={{flex:1,width:window.width,height:window.height}}/>
+        <Image source={require('./../resources/images/pexels-photo-64769.jpeg')} style={{flex:1,width:window.width,height:window.height}}/>
 
         <View style={styles.overlay}>
         
@@ -130,6 +132,9 @@ const RootNav = StackNavigator({
         }
     },
     Home: {screen: HomeScreen},
+    Fill: {screen: FillScreen},
+    Basic: {screen: BasicProfileScreen},
+
   });
 
 
